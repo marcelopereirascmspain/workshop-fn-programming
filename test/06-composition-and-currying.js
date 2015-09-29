@@ -2,8 +2,8 @@ import expect from "expect";
 import { add, square, inc } from "../src/helpers";
 import { curry, compose } from "../src/06-composition-and-currying";
 
-describe("currying", () => {
-  it("should be able to transform a two argument fn into a one argument fn", () => {
+xdescribe("currying", () => {
+  xit("should be able to transform a two argument fn into a one argument fn", () => {
     const curriedAdd = curry(add);
 
     expect(add(1, 2)).toEqual(3);
@@ -12,8 +12,8 @@ describe("currying", () => {
   });
 });
 
-describe("composition", () => {
-  it("should return the result of one function as the input to other function", () => {
+xdescribe("composition", () => {
+  xit("should return the result of one function as the input to other function", () => {
     const incrementAndSquare = compose(square, inc);
 
     expect(incrementAndSquare(4)).toEqual(25);

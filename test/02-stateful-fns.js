@@ -2,7 +2,7 @@ import expect from "expect";
 import {statefulFn, Planet, Sayan} from "../src/02-stateful-fns";
 
 describe("stateful functions", () => {
-  describe("closures", () => {
+  xdescribe("closures", () => {
     it("can store state inside and return different results based on internal state", () => {
       expect(statefulFn()).toEqual(1);
       expect(statefulFn()).toEqual(2);
@@ -10,7 +10,7 @@ describe("stateful functions", () => {
     });
   });
 
-  describe("methods", () => {
+  xdescribe("methods", () => {
     it("can potentially depend on the state of the instance", () => {
       let goku = new Sayan("Son Goku", 336);
 

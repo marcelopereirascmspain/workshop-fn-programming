@@ -1,9 +1,9 @@
 import expect from "expect";
 import { add, concat } from "../src/helpers";
 
-describe("immutability", () => {
-  describe("strings and numbers are immutable. (thanks captain obvious)", () => {
-    it("should be impossible to mutate them", () => {
+xdescribe("immutability", () => {
+  xdescribe("strings and numbers are immutable. (thanks captain obvious)", () => {
+    xit("should be impossible to mutate them", () => {
       const aNumber = 40;
       const anotherNumber = 2;
       const sum = add(aNumber, anotherNumber);
@@ -25,7 +25,7 @@ describe("immutability", () => {
   // ES7 proposal for immutable data structures
   // https://github.com/sebmarkbage/ecmascript-immutable-data-structures
 
-  describe("arrays and objects are not immutable in javascript", () => {
+  xdescribe("arrays and objects are not immutable in javascript", () => {
     it("should be possible mutate them", () => {
       const collection = [1, 2, 3];
       collection.push("caramba");
@@ -51,8 +51,8 @@ describe("immutability", () => {
   // https://facebook.github.io/immutable-js/
   // http://swannodette.github.io/mori/
 
-  describe("we can enforce immutability freezing objects, or use a library", () => {
-    it("should not be possible to mutate a freezed object", () => {
+  xdescribe("we can enforce immutability freezing objects, or use a library", () => {
+    xit("should not be possible to mutate a freezed object", () => {
       const god = Object.freeze({
         name: "god",
         job: "god",
@@ -70,7 +70,7 @@ describe("immutability", () => {
       }); 
     });
 
-    it("should not be possible to mutate a freezed array", () => {
+    xit("should not be possible to mutate a freezed array", () => {
       const cantTouchThis = Object.freeze(["break", "it"]);
 
       expect(() => {      

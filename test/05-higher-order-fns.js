@@ -18,8 +18,8 @@ const superExpensiveSquare = (x) => {
   return square(x);
 };
 
-describe("higher order functions", () => {
-  describe("memoize", () => {
+xdescribe("higher order functions", () => {
+  xdescribe("memoize", () => {
     let memoizedSquare = memoize(superExpensiveSquare);
 
     it("should store a cache of computed values", () => {
@@ -31,7 +31,7 @@ describe("higher order functions", () => {
     });
   });
 
-  describe("map", () => {
+  xdescribe("map", () => {
     it("should transform every item in a collection given a function", () => {
       const xs = [1, 2, 3, 4, 5];
       const squared = map(square, xs);
@@ -40,7 +40,7 @@ describe("higher order functions", () => {
     });
   });
 
-  describe("filter", () => {
+  xdescribe("filter", () => {
     it("should return a new collection where the predicate matches the item", () => {
       const xs = [1, 2, 3, 4, 5];
       const evens = filter(even, xs);
@@ -49,7 +49,7 @@ describe("higher order functions", () => {
     });
   });
 
-  describe("reduce", () => {
+  xdescribe("reduce", () => {
     it("should return a new value accumulating the result ", () => {
       const xs = [1, 2, 3, 4, 5];
       const sum = reduce(add, 0, xs);

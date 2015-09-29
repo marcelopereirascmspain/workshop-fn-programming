@@ -7,9 +7,9 @@ import { add, even, square } from "../src/helpers";
 const collection = [1, 2, 3, 4];
 const expected = 20;
 
-describe("calculating the sum of the squares of the even numbers", () => {
-  describe("chaining transformations", () => {
-    it("should work with plain arrays", () => {
+xdescribe("calculating the sum of the squares of the even numbers", () => {
+  xdescribe("chaining transformations", () => {
+    xit("should work with plain arrays", () => {
       var result =
         collection
         .filter(even)
@@ -19,7 +19,7 @@ describe("calculating the sum of the squares of the even numbers", () => {
       expect(result).toEqual(expected);
     });
 
-    it("should work with immutable-js vectors", () => {
+    xit("should work with immutable-js vectors", () => {
       const result =
         I.fromJS(collection)
         .filter(even)
@@ -29,7 +29,7 @@ describe("calculating the sum of the squares of the even numbers", () => {
       expect(I.is(result, I.fromJS(expected))).toEqual(true);
     });
 
-    it("should work with Rx.Observable collections", () => {
+    xit("should work with Rx.Observable collections", () => {
       var resultRx =
         Rx.Observable.fromArray(collection)
         .filter(even)
@@ -42,8 +42,8 @@ describe("calculating the sum of the squares of the even numbers", () => {
     });
   });
 
-  describe("composing transformations", () => {
-    it("should square every element", () => {
+  xdescribe("composing transformations", () => {
+    xit("should square every element", () => {
       var transform = _.compose(
         _.reduce(add, []),
         _.map(square),
