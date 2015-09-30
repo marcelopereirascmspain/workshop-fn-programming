@@ -7,9 +7,7 @@ import {
 xdescribe("functions in javascript", () => {
   xdescribe("a function is a first-class citizen", () => {
     it("can be assigned to a variable", () => {
-      var add = function (a, b) {
-        return a + b;
-      };
+      var add;
 
       expect(typeof add).toEqual("function");
     });
