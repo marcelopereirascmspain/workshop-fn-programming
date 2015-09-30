@@ -1,5 +1,5 @@
 export const statefulFn = () => {
-  
+
 };
 
 export class Sayan {
@@ -9,7 +9,7 @@ export class Sayan {
     this.powerLevel = powerLevel;
   }
 
-  goSuperSayan() {
+  goSuperSaiyan() {
     this.powerLevel = 10000;
   }
 

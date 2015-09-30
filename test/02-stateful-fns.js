@@ -1,9 +1,9 @@
 import expect from "expect";
 import {statefulFn, Planet, Sayan} from "../src/02-stateful-fns";
 
-describe("stateful functions", () => {
+xdescribe("stateful functions", () => {
   xdescribe("closures", () => {
-    it("can store state inside and return different results based on internal state", () => {
+    xit("can store state inside and return different results based on internal state", () => {
       expect(statefulFn()).toEqual(1);
       expect(statefulFn()).toEqual(2);
       expect(statefulFn()).toEqual(3);
@@ -11,15 +11,15 @@ describe("stateful functions", () => {
   });
 
   xdescribe("methods", () => {
-    it("can potentially depend on the state of the instance", () => {
+    xit("can potentially depend on the state of the instance", () => {
       let goku = new Sayan("Son Goku", 336);
 
       expect(goku.getPowerLevel()).toEqual(336);
-      goku.goSuperSayan();
+      goku.goSuperSaiyan();
       expect(goku.getPowerLevel()).toEqual("It's over 9000!");
     });
 
-    it("can potentially modify other instances state", () => {
+    xit("can potentially modify other instances state", () => {
       let goku = new Sayan("Son Goku", 336);
       let raditz = new Sayan("Raditz", 1200);
 
