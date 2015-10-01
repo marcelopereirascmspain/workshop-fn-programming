@@ -1,9 +1,9 @@
 import expect from "expect";
 import { add, concat } from "../src/helpers";
 
-xdescribe("immutability", () => {
-  xdescribe("strings and numbers are immutable. (thanks captain obvious)", () => {
-    xit("should be impossible to mutate them", () => {
+describe("immutability", () => {
+  describe("strings and numbers are immutable. (thanks captain obvious)", () => {
+    it("should be impossible to mutate them", () => {
       const aNumber = 40;
       const anotherNumber = 2;
       const sum = add(aNumber, anotherNumber);
@@ -25,7 +25,7 @@ xdescribe("immutability", () => {
   // ES7 proposal for immutable data structures
   // https://github.com/sebmarkbage/ecmascript-immutable-data-structures
 
-  xdescribe("arrays and objects are not immutable in javascript", () => {
+  describe("arrays and objects are not immutable in javascript", () => {
     it("should be possible mutate them", () => {
       const collection = [1, 2, 3];
       collection.push("caramba");

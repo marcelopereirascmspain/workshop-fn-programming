@@ -7,22 +7,33 @@ import { add, even, square } from "../src/helpers";
 const collection = [1, 2, 3, 4];
 const expected = 20;
 
-xdescribe("calculating the sum of the squares of the even numbers", () => {
-  xdescribe("chaining transformations", () => {
-    xit("should work with plain arrays", () => {
-      var result = collection;
+describe("calculating the sum of the squares of the even numbers", () => {
+  describe("chaining transformations", () => {
+    it("should work with plain arrays", () => {
+      var result =
+        collection
+        .filter(even)
+        .map(square)
+        .reduce(add);
 
       expect(result).toEqual(expected);
     });
 
-    xit("should work with immutable-js vectors", () => {
-      const result = I.fromJS(collection);
+    it("should work with immutable-js vectors", () => {
+      const result =
+        I.fromJS(collection)
+        .filter(even)
+        .map(square)
+        .reduce(add);
 
       expect(I.is(result, I.fromJS(expected))).toEqual(true);
     });
 
-    xit("should work with Rx.Observable collections", () => {
-      var result = Rx.Observable.fromArray(collection);
+    it("should work with Rx.Observable collections", () => {
+      var result = Rx.Observable.fromArray(collection)
+        .filter(even)
+        .map(square)
+        .reduce(add);
 
       result.subscribe(x => {
         expect(x).toEqual(expected);
@@ -30,9 +41,13 @@ xdescribe("calculating the sum of the squares of the even numbers", () => {
     });
   });
 
-  xdescribe("composing transformations", () => {
-    xit("should square every element", () => {
-      var transform;
+  describe("composing transformations", () => {
+    it("should square every element", () => {
+      var transform = _.compose(
+        _.reduce(add, 0),
+        _.map(square),
+        _.filter(even)
+      );
 
       expect(transform(collection)).toEqual(expected);
       expect(I.is(transform(I.fromJS(collection)), expected)).toEqual(true);

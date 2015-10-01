@@ -1,8 +1,8 @@
 import expect from "expect";
 import {alwaysTheSame, lookMaNoSideEffects, doNotModifyMe} from "../src/04-stateless-fns";
 
-xdescribe("stateless functions", () => {
-  xit("return always the same value for the same arguments", () => {
+describe("stateless functions", () => {
+  it("return always the same value for the same arguments", () => {
     expect(alwaysTheSame(3, 4)).toEqual(7);
     expect(alwaysTheSame(3, 4)).toEqual(7);
     expect(alwaysTheSame(3, 4)).toEqual(7);
@@ -12,7 +12,7 @@ xdescribe("stateless functions", () => {
     expect(alwaysTheSame(6, 6)).toEqual(12);
   });
 
-  xit("don't have any observable side effects", () => {
+  it("don't have any observable side effects", () => {
     expect(lookMaNoSideEffects(2)).toEqual(4);
     expect(doNotModifyMe).toEqual(0);
 

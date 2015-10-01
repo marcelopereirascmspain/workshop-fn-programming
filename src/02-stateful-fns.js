@@ -1,8 +1,10 @@
-export const statefulFn = () => {
+var counter = 1;
 
+export const statefulFn = () => {
+  return counter++;
 };
 
-export class Sayan {
+export class Saiyan {
   constructor(name, powerLevel) {
     this.name = name;
     this.lifeEnergy = 100;
@@ -14,15 +16,15 @@ export class Sayan {
   }
 
   beKicked() {
-
+    this.lifeEnergy -= 2;
   }
 
   kick(otherSayan) {
-    
+    otherSayan.beKicked(); 
   }
 
   getLifeEnergy() {
-    
+    return this.lifeEnergy; 
   }
 
   getPowerLevel() {

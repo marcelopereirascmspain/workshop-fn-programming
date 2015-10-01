@@ -8,18 +8,11 @@ import {
 } from "../src/05-higher-order-fns";
 
 const superExpensiveSquare = (x) => {
-  let i = 10000000;
-  let acc = [];
-  while (i) {
-    acc.push(i * 4);
-    i--;
-  }
-
   return square(x);
 };
 
-xdescribe("higher order functions", () => {
-  xdescribe("memoize", () => {
+describe("higher order functions", () => {
+  describe("memoize", () => {
     let memoizedSquare = memoize(superExpensiveSquare);
 
     it("should store a cache of computed values", () => {
@@ -31,7 +24,7 @@ xdescribe("higher order functions", () => {
     });
   });
 
-  xdescribe("map", () => {
+  describe("map", () => {
     it("should transform every item in a collection given a function", () => {
       const xs = [1, 2, 3, 4, 5];
       const squared = map(square, xs);
@@ -40,7 +33,7 @@ xdescribe("higher order functions", () => {
     });
   });
 
-  xdescribe("filter", () => {
+  describe("filter", () => {
     it("should return a new collection where the predicate matches the item", () => {
       const xs = [1, 2, 3, 4, 5];
       const evens = filter(even, xs);
@@ -49,7 +42,7 @@ xdescribe("higher order functions", () => {
     });
   });
 
-  xdescribe("reduce", () => {
+  describe("reduce", () => {
     it("should return a new value accumulating the result ", () => {
       const xs = [1, 2, 3, 4, 5];
       const sum = reduce(add, 0, xs);

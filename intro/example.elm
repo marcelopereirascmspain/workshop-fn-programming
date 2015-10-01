@@ -10,11 +10,10 @@ square x =
   
 even x =
   x % 2 == 0
-  
-result = 
+
+main =
   List.filter even [1, 2, 3, 4, 5]
   |> List.map square
   |> List.foldl add 0
-
-main =
-  text (toString result)
+  |> toString
+  |> text
